@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "energyLevel": 200.4,
+      "isin": "RU0007661625"
+    },
+    {
+      "energyLevel": 100.4,
+      "isin": "RU000A0JX0J2"
+    }
+  ],
+  "meta": [],
+  "errors": []
+}
