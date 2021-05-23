@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This is a Logback logging back-end configuration file.
+  For guidelines see:
+  - https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
+  - https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
+  - https://logback.qos.ch/manual/configuration.html
+  -->
+<configuration>
+
+    <!-- borrowed with amendments from the default Spring Boot Logback configuration that is available on classpath
+         as spring-boot-2.1.3.RELEASE.jar!/org/springframework/boot/logging/logback/base.xml,
+         see org.springframework.boot:spring-boot:2.1.3.RELEASE -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+    <!-- start of custom settings besides root appenders -->
+    <logger name="com.epam.sber" level="DEBUG"/>
+
+</configuration>
